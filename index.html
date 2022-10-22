@@ -1,0 +1,100 @@
+<html>
+	<head>
+        <meta charset="UTF-8">
+
+		<!--引入jQuery框架-->
+		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+		<!--引入jVectorMap库-->
+		<script type="text/javascript" src="js/jquery-jvectormap-1.2.2.min.js"></script>
+		<!--引入样式表-->
+		<link href="js/jquery-jvectormap-1.2.2.css" rel="stylesheet" media="screen">
+
+
+		<!--引入中国地图数据库-->
+		<script type="text/javascript" src="js/jquery-jvectormap-cn-merc-en.js"></script>
+
+		<!--引入美国地图数据库-->
+		<!--script type="text/javascript" src="js/jquery-jvectormap-us-aea.js"></script-->
+		<!--引入世界地图数据库-->
+		<!--script type="text/javascript" src="js/jquery-jvectormap-world-mill.js"></script-->
+
+	</head>
+<body>
+	<!--background-color: 地图背景颜色-->
+	<!-- <h1>读万卷书不如行万里路，一生走过的风景</h1> -->
+	<!-- <h2>在路上，不为旅行，不因某人，只为在未知的途中遇见未知的自己</h2> -->
+	<div id="map" style="width:800px;height:500px; background-color:#353535"> </div> 
+	<script>
+		$('#map').vectorMap({
+
+			// 此处更改地图
+			map: 'cn_merc_en',   // 中国地图
+			//map: 'us_aea',     // 美国地图
+			//map: 'world_mill', // 世界地图
+
+
+			backgroundColor: 'transparent',
+			zoomMin: 0.9, // 鼠标缩放时的最小比例
+			zoomMax: 2.4, // 鼠标缩放时的最大比例
+			focusOn: {
+				x: 0.55,
+				y: 2,
+				scale: 0.9
+			},
+			regionStyle: {
+				initial: {
+					fill: '#e5e5e5',   // 地图颜色
+					"fill-opacity": 1, // 省份（州）是否隐藏，鼠标滑动时显示; 1：显示，2：隐藏。
+					stroke: 'none',
+					"stroke-width": 0,
+					"stroke-opacity": 1
+				},
+				hover: {
+					fill: '#ccc',  // 鼠标滑动至某省份的高亮颜色。
+					"fill-opacity": 0.8
+				},
+				selected: {
+					fill: 'yellow'
+				},
+				selectedHover: {}
+			},
+			markerStyle: {
+		        initial: {
+		            fill: '#fd8888', // 足迹位置的填充颜色
+		            stroke: '#fff'   // 足迹位置的描边颜色
+		        },
+				hover: {
+					fill: '#fd2020', // 鼠标滑动至足迹位置后的填充颜色
+					stroke: '#fff',  // 鼠标滑动至足迹位置后的描边颜色
+					"fill-opacity": 0.8
+				},
+		    },
+			markers: [ // 足迹位置
+
+				// {latLng: [经度（保留两位小数）, 纬度（保留两位小数）], name: '城市名称'},
+				// 推荐查询经纬度网站：http://www.gpsspg.com/maps.htm
+
+		        {latLng: [30.05, 101.97], name: '甘孜藏族自治州'},
+		        {latLng: [30.10, 102.53], name: '成都'},
+				{latLng: [29.57, 106.55], name: '重庆'},
+		        {latLng: [28.31, 109.74], name: '湘西'},
+				{latLng: [27.72, 109.18], name: '铜仁'},
+		        {latLng: [27.50, 109.95], name: '怀化'},
+				{latLng: [29.04, 111.69], name: '常德'},
+		        {latLng: [29.37, 113.10], name: '岳阳'},
+				{latLng: [28.61, 112.32], name: '益阳'},
+		        {latLng: [27.49, 111.45], name: '娄底'},
+				{latLng: [28.19, 112.98], name: '长沙'},
+		        {latLng: [26.07, 110.32], name: '衡阳'},
+				{latLng: [26.03, 112.57], name: '株洲'},
+		        {latLng: [27.62, 113.85], name: '萍乡'},
+				{latLng: [28.09, 115.27], name: '南昌'},
+				{latLng: [22.28, 114.05], name: '深圳'},
+		        {latLng: [23.56, 112.57], name: '广州'},
+				{latLng: [35.35, 119.30], name: '青岛'},
+				{latLng: [27.05, 111.58], name: '湘潭'},
+		        {latLng: [27.81, 114.38], name: '宜春'}
+		    ]
+		});
+	</script>
+</html>
