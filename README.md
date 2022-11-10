@@ -192,11 +192,8 @@ git clone https://github.com/HelloWuJiaYi/jVectorMap-Footprint
 
 欢迎访问我的个人博客:
 
-<http://www.wujiayi.vip>
+<http://lengmo714.top>
 
-我的微信公众号：
-
-`吴佳轶同学`
 
 
 
